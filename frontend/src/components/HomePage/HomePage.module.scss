@@ -1,0 +1,39 @@
+.title {
+    text-align: center;
+    color: rgba(37, 157, 214, 1);
+    font-size: 48px;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+.text1 {
+    display: block;
+    text-align: center;
+    font-size: 35px;
+    width: 500px;
+    color: #000;
+    margin: 0 auto 50px auto;
+    padding: 0;
+}
+
+.text2 {
+    display: block;
+    color: #000;
+    text-align: center;
+    font-size: 25px;
+}
+
+.button {
+    display: flex;
+    margin: 0 auto;
+    padding: 18px 58px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    border-radius: 16px;
+    border: none;
+    background: linear-gradient(270deg, #537CCB 0%, #13AED7 100%);
+    color: #fff;
+}
