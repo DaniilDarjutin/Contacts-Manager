@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import React from "react";
 
 const HomePage = () => {
-    const navigate = useNavigate();  // Инициализируем useNavigate
+    const navigate = useNavigate();
 
     const handleButtonClick = () => {
-        navigate("/add");  // Переходим на страницу /add
+        navigate("/add");
 
     };
     return (

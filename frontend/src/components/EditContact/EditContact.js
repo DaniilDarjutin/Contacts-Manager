@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams, useNavigate } from "react-router-dom"; // Для получения параметров и навигации
+import { useParams, useNavigate } from "react-router-dom";
+import classes from "./EditContact.module.scss"
 
 const EditContact = () => {
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
-    const { id } = useParams(); // Получаем id контакта из URL
+    const { id } = useParams();
     const navigate = useNavigate();
 
-    // Загружаем данные контакта для редактирования
     useEffect(() => {
         axios.get(`http://localhost:3001/api/contacts/${id}`)
             .then((response) => {
@@ -23,13 +23,12 @@ const EditContact = () => {
             });
     }, [id]);
 
-    // Обработка отправки изменений
     const handleSubmit = (e) => {
         e.preventDefault();
         axios.put(`http://localhost:3001/api/contacts/${id}`, { name, phone, email })
             .then(() => {
                 alert("Contact updated successfully!");
-                navigate("/"); // Перенаправляем на главную страницу после обновления
+                navigate("/list");
             })
             .catch((error) => {
                 console.error("Error updating contact:", error);
@@ -37,21 +36,21 @@ const EditContact = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <h2>Edit Contact</h2>
-            <div>
-                <label>Name:</label>
-                <input value={name} onChange={(e) => setName(e.target.value)} />
+        <form className={classes.form} onSubmit={handleSubmit}>
+            <h2 className={classes.title}>Редактирование контакта</h2>
+            <div className={classes.input}>
+                <label className={classes.label}>Имя:</label>
+                <input className={classes.field} value={name} onChange={(e) => setName(e.target.value)} />
             </div>
-            <div>
-                <label>Phone:</label>
-                <input value={phone} onChange={(e) => setPhone(e.target.value)} />
+            <div className={classes.input}>
+                <label className={classes.label}>Телефон:</label>
+                <input className={classes.field} value={phone} onChange={(e) => setPhone(e.target.value)} />
             </div>
-            <div>
-                <label>Email:</label>
-                <input value={email} onChange={(e) => setEmail(e.target.value)} />
+            <div className={classes.input}>
+                <label className={classes.label}>Почта:</label>
+                <input className={classes.field} value={email} onChange={(e) => setEmail(e.target.value)} />
             </div>
-            <button type="submit">Save Changes</button>
+            <button className={classes.button} type="submit">Сохранить изменения</button>
         </form>
     );
 };

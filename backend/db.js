@@ -1,6 +1,6 @@
 const sqlite3 = require('sqlite3').verbose();
 
-// Подключение к базе данных
+// подключение к бд
 const db = new sqlite3.Database('./contacts.db', (err) => {
     if (err) {
         console.error('Could not connect to database:', err);
@@ -9,7 +9,6 @@ const db = new sqlite3.Database('./contacts.db', (err) => {
     }
 });
 
-// Создание таблицы для контактов (если она еще не создана)
 db.serialize(() => {
     db.run(`
         CREATE TABLE IF NOT EXISTS contacts (

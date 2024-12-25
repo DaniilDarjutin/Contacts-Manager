@@ -6,9 +6,26 @@ const db = require('../db');
 router.get('/', (req, res) => {
     db.all('SELECT * FROM contacts', [], (err, rows) => {
         if (err) {
+            console.log(err);
             res.status(500).json({ error: err.message });
         } else {
             res.json(rows);
+        }
+    });
+});
+
+// Получение контакта по id
+router.get('/:id', (req, res) => {
+    const { id } = req.params;
+    db.get('SELECT * FROM contacts WHERE id = ?', [id], (err, row) => {
+        if (err) {
+            console.log(err);
+            res.status(500).json({ error: err.message });
+        } else if (!row) {
+            console.log(err);
+            res.status(404).json({ error: 'Contact not found' });
+        } else {
+            res.json(row);
         }
     });
 });
@@ -18,6 +35,7 @@ router.post('/', (req, res) => {
     const { name, phone, email } = req.body;
     db.run('INSERT INTO contacts (name, phone, email) VALUES (?, ?, ?)', [name, phone, email], function (err) {
         if (err) {
+            console.log(err);
             res.status(500).json({ error: err.message });
         } else {
             res.json({ id: this.lastID });
@@ -53,5 +71,6 @@ router.delete('/:id', (req, res) => {
         }
     });
 });
+
 
 module.exports = router;

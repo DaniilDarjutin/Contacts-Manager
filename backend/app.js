@@ -1,27 +1,21 @@
-// Импорт модулей
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const db = require('./db'); // Подключение к базе данных
-const contactsRoutes = require('./routes/contacts'); // Подключение маршрутов для контактов
+const db = require('./db');
+const contactsRoutes = require('./routes/contacts');
 
-// Создание приложения Express
 const app = express();
 
-// Middleware
-app.use(cors()); // Разрешение запросов с других доменов
-app.use(bodyParser.json()); // Обработка JSON в запросах
+app.use(cors()); // разрешение запросов с других доменов
+app.use(bodyParser.json()); // обработка JSON в запросах
 
-// Базовый тестовый маршрут
-app.get('/', (req, res) => {
+app.get('/', (req, res) => {  // начальный маршрут
     res.send('API is working!');
 });
 
-// Маршруты для управления контактами
-app.use('/api/contacts', contactsRoutes);
+app.use('/api/contacts', contactsRoutes); // роуты для управления контактами
 
-// Запуск сервера
-const PORT = 3001;
+const PORT = 3001; // запуск сервера
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });

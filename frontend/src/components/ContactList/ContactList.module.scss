@@ -1,0 +1,92 @@
+.title {
+    text-align: center;
+    font-size: 40px;    
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1270px;
+    list-style-type: none;
+    margin: 0 auto;
+    gap: 50px;
+}
+
+.item {
+    background-color: #fff;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    color: #000;
+    gap: 15px;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.name {
+    display: block;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.phone {
+    display: block;
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+}
+
+.phone:hover {
+    text-decoration: underline;
+    font-size: 22px;
+    transition: 0.3s ease;
+}
+
+.email {
+    font-size: 20px;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.button__del {
+    display: flex;
+    background-color: rgba(35, 157, 214, 1);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.button__del:hover {
+    background: rgba(157, 24, 129, 1);
+    transition: 0.3s ease;
+}
+
+.button__edit {
+    display: flex;
+    background-color: rgba(35, 157, 214, 1);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.button__edit:hover {
+    background: rgba(157, 24, 129, 1);
+    transition: 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+}

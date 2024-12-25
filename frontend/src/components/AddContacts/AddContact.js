@@ -24,20 +24,20 @@ const AddContact = () => {
 
     return (
         <form className={classes.form} onSubmit={handleSubmit}>
-            <h2>Добавнелие контактов</h2>
-            <div>
-                <label>Name:</label>
-                <input value={name} onChange={(e) => setName(e.target.value)} />
+            <h2 className={classes.title}>Добавнелие контактов</h2>
+            <div className={classes.input}>
+                <label className={classes.label}>Имя:</label>
+                <input className={classes.field} value={name} onChange={(e) => setName(e.target.value)} placeholder="Иван"/>
             </div>
-            <div>
-                <label>Phone:</label>
-                <input value={phone} onChange={(e) => setPhone(e.target.value)} />
+            <div className={classes.input}>
+                <label className={classes.label}>Телефон:</label>
+                <input className={classes.field} value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+7 916 940 85 81"/>
             </div>
-            <div>
-                <label>Email:</label>
-                <input value={email} onChange={(e) => setEmail(e.target.value)} />
+            <div className={classes.input}>
+                <label className={classes.label}>Почта:</label>
+                <input className={classes.field} value={email} onChange={(e) => setEmail(e.target.value)} placeholder="example@gmail.com"/>
             </div>
-            <button type="submit">Add Contact</button>
+            <button className={classes.button} type="submit">Добавить контакт</button>
         </form>
     );
 };

@@ -1,8 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Импортируем роутер и компоненты маршрутов
-import ContactList from "./components/ContactList";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import ContactList from "./components/ContactList/ContactList";
 import AddContact from "./components/AddContacts/AddContact";
-import EditContact from "./components/EditContact"; // Импортируем компонент редактирования
+import EditContact from "./components/EditContact/EditContact";
 import HomePage from "./components/HomePage/HomePage"
 import classes from "./main.module.scss"
 
@@ -24,10 +24,10 @@ function App() {
                 </header>
                 
                 <Routes>
-                    <Route path="/" element={<HomePage />} /> {/* Главная страница - список контактов */}
-                    <Route path="/list" element={<ContactList />} /> {/* Главная страница - список контактов */}
-                    <Route path="/add" element={<AddContact />} /> {/* Страница добавления контакта */}
-                    <Route path="/edit/:id" element={<EditContact />} /> {/* Маршрут для редактирования */}
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/list" element={<ContactList />} />
+                    <Route path="/add" element={<AddContact />} />
+                    <Route path="/edit/:id" element={<EditContact />} />
                 </Routes>
             </div>
         </Router>
