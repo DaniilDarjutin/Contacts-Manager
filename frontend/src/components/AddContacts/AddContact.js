@@ -24,7 +24,7 @@ const AddContact = () => {
 
     return (
         <form className={classes.form} onSubmit={handleSubmit}>
-            <h2 className={classes.title}>Добавнелие контактов</h2>
+            <h2 className={classes.title}>Добавление контактов</h2>
             <div className={classes.input}>
                 <label className={classes.label}>Имя:</label>
                 <input className={classes.field} value={name} onChange={(e) => setName(e.target.value)} placeholder="Иван"/>
