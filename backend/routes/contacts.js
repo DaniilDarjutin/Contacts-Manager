@@ -23,7 +23,7 @@ router.get('/:id', (req, res) => {
             res.status(500).json({ error: err.message });
         } else if (!row) {
             console.log(err);
-            res.status(404).json({ error: 'Contact not found' });
+            res.status(404).json({ error: 'Контакт не найден' });
         } else {
             res.json(row);
         }

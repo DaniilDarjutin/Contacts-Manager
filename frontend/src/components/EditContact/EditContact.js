@@ -19,7 +19,7 @@ const EditContact = () => {
                 setEmail(contact.email);
             })
             .catch((error) => {
-                console.error("Error fetching contact:", error);
+                console.error("Ошибка при выборе контактов:", error);
             });
     }, [id]);
 
@@ -27,11 +27,11 @@ const EditContact = () => {
         e.preventDefault();
         axios.put(`http://localhost:3001/api/contacts/${id}`, { name, phone, email })
             .then(() => {
-                alert("Contact updated successfully!");
+                alert("Контакт успешно обновлён!");
                 navigate("/list");
             })
             .catch((error) => {
-                console.error("Error updating contact:", error);
+                console.error("Ошибка при обновлении контакта:", error);
             });
     };
 

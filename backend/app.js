@@ -9,13 +9,13 @@ const app = express();
 app.use(cors()); // разрешение запросов с других доменов
 app.use(bodyParser.json()); // обработка JSON в запросах
 
-app.get('/', (req, res) => {  // начальный маршрут
-    res.send('API is working!');
+app.get('/', (req, res) => {  // тестовый маршрут
+    res.send('API работает');
 });
 
 app.use('/api/contacts', contactsRoutes); // роуты для управления контактами
 
 const PORT = 3001; // запуск сервера
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Сервер работает на http://localhost:${PORT}`);
 });

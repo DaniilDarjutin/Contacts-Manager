@@ -12,7 +12,7 @@ const ContactList = () => {
                 setContacts(response.data);
             })
             .catch((error) => {
-                console.error("Error fetching contacts:", error);
+                console.error("Ошибка при выборе контактов:", error);
             });
     }, []);
 
@@ -22,7 +22,7 @@ const ContactList = () => {
                 setContacts(contacts.filter(contact => contact.id !== id));
             })
             .catch((error) => {
-                console.error("Error deleting contact:", error);
+                console.error("Ошибка при удалении контакта:", error);
             });
     };
 

@@ -12,13 +12,13 @@ const AddContact = () => {
         e.preventDefault();
         axios.post("http://localhost:3001/api/contacts", { name, phone, email })
             .then(() => {
-                alert("Contact added successfully!");
+                alert("Контакт добавлен!");
                 setName("");
                 setPhone("");
                 setEmail("");
             })
             .catch((error) => {
-                console.error("Error adding contact:", error);
+                console.error("Ошибка при добавлении контакта:", error);
             });
     };
 
